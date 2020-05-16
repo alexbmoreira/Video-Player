@@ -1,0 +1,89 @@
+* { box-sizing: border-box; }
+
+body
+{
+    background-color: #edf2f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+    margin: 0;
+}
+
+h1
+{
+    color: #FFFFFF;
+}
+
+.screen
+{
+    cursor: pointer; 
+    width: 50%;
+    background-color: #000000 !important;
+}
+
+.controls
+{
+    width: 50%;
+    background-color: #d90429;
+    display: flex;
+    border-radius: 0px 0px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.controls .btn
+{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.controls .btn:focus
+{
+    outline: 0;
+}
+
+.controls .btn:hover
+{
+    opacity: 0.8;
+}
+
+/* .controls .fa-play
+{
+    color: #55AA55;
+}
+
+.controls .fa-stop
+{
+    color: #CC2222;
+}
+
+.controls .fa-pause
+{
+    color: #BBBBBB
+} */
+
+.controls .fa-pause, .controls .fa-play, .controls .fa-stop
+{
+    color: #FFFFFF
+}
+
+.controls .timestamp
+{
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 0px 5px 0px 10px;
+    cursor: default;
+}
+
+@media (max-width: 1080px)
+{
+    .screen, .controls
+    {
+        width: 90%;
+    }
+}
+
