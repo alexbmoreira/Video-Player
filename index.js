@@ -9,6 +9,13 @@ updateProgress();
 // Event listeners
 video.addEventListener("click", toggleVideoStatus);
 play.addEventListener("click", toggleVideoStatus);
+document.addEventListener("keyup", function (e)
+{
+    if (e.code === "Space")
+    {
+        toggleVideoStatus();
+    }
+});
 
 stop.addEventListener("click", stopVideo);
 
