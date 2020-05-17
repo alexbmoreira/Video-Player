@@ -1,17 +1,19 @@
-/* SOURCE: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
+* { box-sizing: border-box;}
 
 :root
 {
     --track-color: #8d99ae;
 }
 
-input[type='range'] {
+input[type='range']
+{
 	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
 	width: 100%; /* Specific width is required for Firefox. */
 	background: transparent; /* Otherwise white in Chrome */
 }
 
-input[type='range']:focus {
+input[type='range']:focus
+{
 	outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
 
@@ -19,17 +21,26 @@ input[type='range']:focus {
 
 
 /* Styling for WebKit/Blink */
-input[type='range']::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb
+{
 	-webkit-appearance: none;
-	height: 16px;
-	width: 16px;
+	height: 8px;
+	width: 8px;
 	border-radius: 100%;
 	background: #ffffff;
 	cursor: pointer;
+	margin-top: px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type='range']::-webkit-slider-thumb:hover
+{
+	height: 16px;
+	width: 16px;
 	margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
 
-input[type='range']::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-runnable-track
+{
 	width: 100%;
 	height: 8px;
 	cursor: pointer;
@@ -37,23 +48,32 @@ input[type='range']::-webkit-slider-runnable-track {
 	border-radius: 3px;
 }
 
-input[type='range']:focus::-webkit-slider-runnable-track {
+input[type='range']:focus::-webkit-slider-runnable-track
+{
 	background: var(--track-color);
 }
 
 
 
 /* Styling for Firefox */
-input[type='range']::-moz-range-thumb {
+input[type='range']::-moz-range-thumb
+{
 	border: 0;
-	height: 16px;
-	width: 16px;
+	height: 8px;
+	width: 8px;
 	border-radius: 100%;
 	background: #ffffff;
 	cursor: pointer;
 }
 
-input[type='range']::-moz-range-track {
+input[type='range']::-moz-range-thumb:hover, input[type='range']::-moz-range-thumb:active
+{
+	height: 16px;
+	width: 16px;
+}
+
+input[type='range']::-moz-range-track
+{
 	width: 100%;
 	height: 8px;
 	cursor: pointer;
@@ -66,7 +86,8 @@ input[type='range']::-moz-range-track {
 
 
 /* Styling for IE */
-input[type='range']::-ms-track {
+input[type='range']::-ms-track
+{
 	width: 100%;
 	cursor: pointer;
 
@@ -75,27 +96,39 @@ input[type='range']::-ms-track {
 	color: transparent;
 }
 
-input[type='range']::-ms-thumb {
-    margin-top: 0px;
-	border: 0;
-	height: 16px;
-	width: 16px;
+input[type='range']::-ms-thumb
+{
+    margin-top: 0.5px;
+	height: 8px;
+	width: 8px;
 	border-radius: 100%;
 	background: #ffffff;
 	cursor: pointer;
 }
 
-input[type='range']::-ms-fill-lower {
-	background: #8d99ae;
-	border-radius: 3px;
+input[type='range']::-ms-thumb:hover, input[type='range']::-ms-thumb:active
+{
+	height: 16px;
+	width: 16px;
 }
-input[type='range']:focus::-ms-fill-lower {
+
+input[type='range']::-ms-fill-lower
+{
+	background: #8d99ae;
+    border-radius: 3px 0px 0px 3px;
+    padding-right: -2px;
+}
+input[type='range']:focus::-ms-fill-lower
+{
 	background: #8d99ae;
 }
-input[type='range']::-ms-fill-upper {
+input[type='range']::-ms-fill-upper
+{
 	background: #8d99ae;
-	border-radius: 3px;
+	border-radius: 0px 3px 3px 0px;
+    padding-left: -2px;
 }
-input[type='range']:focus::-ms-fill-upper {
+input[type='range']:focus::-ms-fill-upper
+{
 	background: #8d99ae;
 }

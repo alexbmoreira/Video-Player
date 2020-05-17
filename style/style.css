@@ -46,21 +46,6 @@ body
     opacity: 0.8;
 }
 
-/* .controls .fa-play
-{
-    color: #55AA55;
-}
-
-.controls .fa-stop
-{
-    color: #CC2222;
-}
-
-.controls .fa-pause
-{
-    color: #BBBBBB
-} */
-
 .controls .fa-pause, .controls .fa-play, .controls .fa-stop
 {
     color: #FFFFFF
