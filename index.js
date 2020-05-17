@@ -6,25 +6,42 @@ const timestamp = document.getElementById("timestamp");
 
 // Event listeners
 video.addEventListener("click", toggleVideoStatus);
-video.addEventListener("pause", updateIcon);
-video.addEventListener("play", updateIcon);
-video.addEventListener("timeupdate", updateProgress);
-
 play.addEventListener("click", toggleVideoStatus);
 
 stop.addEventListener("click", stopVideo);
 
+video.addEventListener("timeupdate", updateProgress);
 progress.addEventListener("change", setVideoProgress);
 
 //Play and Pause
 function toggleVideoStatus()
 {
-    return true;
+    if (video.paused)
+    {
+        video.play();
+    }
+    else
+    {
+        video.pause();
+    }
+    updateIcon(video.paused);
 }
 
-function updateIcon()
+function updateIcon(paused)
 {
-    return true;
+    if (paused)
+    {
+        play.children[0].classList.replace("fa-pause", "fa-play");
+    }
+    else
+    {
+        play.children[0].classList.replace("fa-play", "fa-pause");
+    }
+}
+
+function stopVideo()
+{
+
 }
 
 function updateProgress()
@@ -33,11 +50,6 @@ function updateProgress()
 }
 
 function setVideoProgress()
-{
-    return true;
-}
-
-function stopVideo()
 {
     return true;
 }
