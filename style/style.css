@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 * { box-sizing: border-box; }
 
 body
 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
     background-color: #edf2f4;
     display: flex;
     flex-direction: column;
@@ -16,10 +20,12 @@ body
     cursor: pointer; 
     width: 50%;
     background-color: #000000 !important;
+    object-fit: none;
 }
 
 .controls
 {
+    font-size: 18px;
     width: 50%;
     background-color: #d90429;
     display: flex;
