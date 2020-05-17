@@ -4,6 +4,8 @@ const stop = document.getElementById("stop");
 const progress = document.getElementById("progress");
 const timestamp = document.getElementById("timestamp");
 
+updateProgress();
+
 // Event listeners
 video.addEventListener("click", toggleVideoStatus);
 play.addEventListener("click", toggleVideoStatus);
